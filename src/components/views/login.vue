@@ -2,8 +2,8 @@
     <div id="estrutura" class="w-100 h-100 overflow-hidden">
         <div class="d-flex">
 
-            <div class="h-vh-100 p-5 box-img-login d-flex flex-column">
-                <div class="d-flex  h-100 flex-column align-items-center justify-content-center">
+            <div class="h-vh-100 p-5 box-img-login d-md-flex d-none flex-column">
+                <div class="d-md-flex d-sm-none  h-100 flex-column align-items-center justify-content-center">
                     <b-iconstack font-scale="5" class="mb-3">
                         <b-icon stacked icon="calendar4" variant="white"  scale="0.75"></b-icon>
 
@@ -18,7 +18,7 @@
                 </div>
 
 
-                <div class=" py-2">
+                <div class="py-2">
 
                     <div class="d-flex justify-content-between align-items-center">
                         <img left src="../../assets/images/logo-lais.png" width="145" height="45"  alt="Logo LAIS">
@@ -27,20 +27,23 @@
                 </div>
             </div>
 
-            <div class="w-100">
-                <b-nav class="p-3 justify-content-end align-items-center">
-  
-                    <p class="mb-0 mr-4">Não tem uma conta?</p>
+            <div class="w-100 d-block">
+                <b-nav class="nav-login p-3 justify-content-end align-items-center">
+                    <b-iconstack font-scale="5" class="d-md-none d-sm-block">
+                        <b-icon stacked icon="calendar4" variant="white"  scale="0.75"></b-icon>
+
+                    </b-iconstack>
+                    <p class="mb-0 mr-4 d-md-block d-none">Não tem uma conta?</p>
                     <b-button variant="purple" class="align-items-center">
                         <b-icon icon="person" class="mr-2" aria-hidden="true"></b-icon>                        
                         Crie uma
                     </b-button>
                 </b-nav>
 
-                <div class="h-100 d-flex justify-content-center align-items-center">
+                <div id="box-card-form-login" class="h-100 d-flex justify-content-center align-items-center">
                     <b-card id="card-form-login" class="p-5">
     
-                        <p class="f-16 text-info text-center">
+                        <p class="f-16 text-info text-center d-none d-md-block">
                             Preencha os campos abaixo
                         </p>
 
@@ -75,6 +78,13 @@
                         </b-form>
 
                     </b-card>
+                </div>
+           
+                <div class="h-initial px-3 py-2 d-md-none d-sm-block">
+                    <div class="d-flex justify-content-around align-items-center">
+                        <img left src="../../assets/images/logo-lais.png" width="145" height="45"  alt="Logo LAIS">
+                        <img right src="../../assets/images/logo-ufrn.png" width="157" height="70" alt="Logo UFRN">
+                    </div>
                 </div>
             </div>
         </div>
