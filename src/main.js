@@ -1,14 +1,19 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import VueMask from 'v-mask';
+import HighchartsVue from 'highcharts-vue'
+
+Vue.use(VueMask);
+Vue.use(HighchartsVue)
 
 
 // -------------------------------------------------------
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faFire, faCloudUploadAlt, faPlus, faUser, faSmileWink, faStoreAlt, faSortAmountDown, faEllipsisV, faCog, faTrash, faUserPlus} from '@fortawesome/free-solid-svg-icons'
-Vue.component('FontAwesomeIcon', FontAwesomeIcon);
-library.add(faFire, faCloudUploadAlt, faPlus, faUser, faSmileWink, faStoreAlt, faSortAmountDown, faEllipsisV, faCog, faTrash, faUserPlus)
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+library.add( faFire, faCloudUploadAlt, faPlus, faUser, faSmileWink, faStoreAlt, faSortAmountDown, faEllipsisV, faCog, faTrash, faUserPlus)
 // -------------------------------------------------------
 
 import VueSweetalert2 from 'vue-sweetalert2';

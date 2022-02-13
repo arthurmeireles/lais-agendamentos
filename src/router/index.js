@@ -1,19 +1,17 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import login from '../components/views/login';
-
 import Cadastro  from '../components/views/cadastro';
-import paginaInicial from '../components/views/paginaInicial'
-import Dashboard from '../components/reutilizaveis/Dashboard'
-import Usuarios from '../components/reutilizaveis/Usuarios'
-import vincularProfissional from '../components/reutilizaveis/vincularProfissional'
-import agendarVacina from '../components/reutilizaveis/agendarVacina'
-import desvincularProfissional from '../components/reutilizaveis/desvincularProfissional'
-import relatorios from '../components/reutilizaveis/relatorios'
+import PortalTransparencia  from '../components/views/portalTransparencia';
+import PaginaInicial from '../components/views/paginaInicial'
+import Agendar from '../components/views/agendar'
 Vue.use(Router)
 const routes = [
-    { path: '/paginaInicial', redirect: '/' },
-    { path: '/', name:'paginaInicial', component: paginaInicial },
+    { 
+        path: '', 
+        name: 'paginaInicial', 
+        component: PaginaInicial
+    },
     {
         path: '/login', name: 'login', component: login,
         meta: {
@@ -27,45 +25,22 @@ const routes = [
         }
     },
     {
-        path: '/logout', name: 'logout'
+        path: '/agendar', name: 'Agendar', component: Agendar,
+        meta: {
+            title: "Agendar"
+        }
+    },
+
+
+    {
+        path: '/transparencia', name: 'portalTransparencia', component: PortalTransparencia,
+        meta: {
+            title: "Transparencia!"
+        }
     },
     {
-        path: '/auth/', component: () => import('../components/reutilizaveis/EstruturaPagina.vue'),
-        children:[
-
-            {
-                path:'Dashboard', name: 'dashboard', component:Dashboard,
-                meta: { title:'Página Inicial' }
-            },
-
-            {
-                path:'usuarios', name: 'usuarios', component: Usuarios,
-                meta: { title:'Gerenciar de Usuario' }
-            },
-
-            {
-                path:'vinculoprofissionais', name: 'vinculoprofissionais', component: vincularProfissional,
-                meta: { title:'Vincular Profissional' }
-            },
-            {
-                path:'desvincularProfissional', name: 'desvincularProfissional', component: desvincularProfissional,
-                meta: { title:'Vincular Profissional' }
-            },
-            {
-                path: 'agendarVacina', name: 'agendarVacina',component: agendarVacina,
-                meta: { title:'Agendar uma vacina' }
-            },
-            {
-                path: 'relatorios', name: 'relatorios',component: relatorios,
-                meta: { title:'Agendar uma vacina' }
-            }
-
-            
-        ]
+        path: '/logout', name: 'logout'
     },
-
-
-
 ];
 const router = new Router({ routes, mode: 'history' })
 export default router;

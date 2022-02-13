@@ -1,12 +1,7 @@
 <template>
         <div id="app">
-
             <router-view></router-view> 
-
-
         </div>
-
-
 </template>
 
 
@@ -18,6 +13,19 @@ import './assets/css/style.css'
 
 export default {
     name: 'App',
+    data() {
+      return {
+          token: ''
+      }
+    },
+
+    // mounted() {
+    //   this.token = localStorage.getItem('token')
+    //   if(this.token == ''){
+    //       this.$router.push({name: 'login'})
+
+    //   }
+    // },
 }
 </script>
 

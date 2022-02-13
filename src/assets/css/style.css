@@ -23,11 +23,26 @@
 .btn-purple{
     background-color: #3A0CA3;
     color: white;
+    width: 150px;
 }
+
+.btn-purple:hover{
+  color: white;
+}
+
 .btn-info{
     background-color: #F72585;
     font-size: 16px;
     font-weight: bold;
+    border-color: #F72585 !important;
+}
+
+.btn-info:hover, .btn-info:active {
+  background-color: #d1618e  !important;
+}
+
+.btn-info:focus {
+  box-shadow: 0 0 0 0.2rem #f7258547!important;
 }
 .f-16{
   font-size: 16px;
@@ -37,10 +52,14 @@
   font-weight: bold;
   font-size: 1.75em;
 }
-
+.text-primary{
+  color: #3A0CA3 !important
+}
 .text-info{
   color: #F72585 !important
 }
+
+
 #card-form-login{
   box-shadow: 0px 3px 6px #0000001A;
   max-width: 500px;
@@ -89,7 +108,75 @@
   }
 
 }
+.modal-backdrop {
 
+  background-color: #000000a1 !important;
+}
 .h-initial{
   height: initial !important;
+}
+
+.font-bold{
+  font-weight: bold;
+}
+
+.termos{
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  font: normal normal normal 16px/25px Poppins;
+  letter-spacing: 0px;
+  color: #4A4A4A;
+  opacity: 1;
+}
+
+.titulo-modal{
+  text-align: left;
+  font: normal normal bold 30px/30px Poppins;
+  letter-spacing: 0px;
+  color: #F72585;
+  opacity: 1;
+}
+
+.footer-card{
+  height: 55px;
+}
+.footer-card button{
+  width: 50%;
+  font: normal normal normal 16px/25px Poppins;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+  height: 55px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+
+}
+
+.btn-fechar-modal{
+  min-width: 180px;
+  text-align: center;
+  font: normal normal normal 16px/25px Poppins;
+  letter-spacing: 0px;
+  color: #4A4A4A;
+  opacity: 1;
+}
+.btn-fechar-modal:hover{
+  color: white;
+}
+.text-sucesso{
+  color: #20D5AB
+}
+
+#form-filtro-disponibilidade label{
+  text-align: left;
+  font: normal normal normal 16px/30px Poppins;
+  letter-spacing: 0px;
+  color: #3A0CA3;
+  opacity: 1;
+}
+
+
+#form-filtro-disponibilidade input, #form-filtro-disponibilidade select{
+  border: 1px solid #3A0CA3;
 }

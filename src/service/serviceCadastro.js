@@ -1,13 +1,9 @@
 import {API} from './config'
 
 export default {
-  cadastrarUsuario: (usuario) => {
-      return API.post('/registro', usuario)
-  },
+    cadastrarUsuario: (usuario) => {
+        return API.post('/users', usuario)
+    },
 
-    criaCartaoVacinacao: (usuarioId) =>{
-        console.log(usuarioId)
-        return API.post('/carteira-vacinacao', usuarioId)
-    }
 
 }

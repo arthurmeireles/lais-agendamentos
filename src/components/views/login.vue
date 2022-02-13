@@ -14,7 +14,7 @@
                     <p class="text-white f-16 mb-4 text-center">Evite filas e aglomeração.<br> O seu bem é o bem de todos</p>
 
 
-                    <b-button variant="info" block size="lg" class="mx-2">TRANSPARÊNCIA</b-button>
+                    <b-button variant="info" block size="lg" href="/transparencia" class="mx-2">TRANSPARÊNCIA</b-button>
                 </div>
 
 
@@ -34,7 +34,7 @@
 
                     </b-iconstack>
                     <p class="mb-0 mr-4 d-md-block d-none">Não tem uma conta?</p>
-                    <b-button variant="purple" class="align-items-center">
+                    <b-button href="/cadastro" variant="purple" class="align-items-center">
                         <b-icon icon="person" class="mr-2" aria-hidden="true"></b-icon>                        
                         Crie uma
                     </b-button>
@@ -64,9 +64,10 @@
                             <b-form-group id="box-input-senha" label="Senha" label-for="input-senha">
                                 <b-form-input
                                     id="input-senha"
-                                    v-model="usuario.senha"
+                                    v-model="usuario.password"
                                     placeholder="Digite aqui sua senha"
-                                    required>
+                                    required
+                                    type="password">
                                 </b-form-input>
                             </b-form-group>
                             <div class="w-100 d-flex justify-content-end">
@@ -74,7 +75,7 @@
                             </div>
                          
 
-                            <b-button block type="submit" variant="info">Entrar</b-button>
+                            <b-button block @click="logarUsuario" variant="info">Entrar</b-button>
                         </b-form>
 
                     </b-card>
@@ -104,7 +105,6 @@
 </style>
 <script>
 import serviceLogin from '@/service/serviceLogin'
-import axios from 'axios'
 
 export default {
     name: 'Login',
@@ -112,22 +112,19 @@ export default {
         return {
             usuario: {
                 email: '',
-                senha: ''
+                password: ''
             }
         }
     },
     methods:{
         logarUsuario: function(){
             serviceLogin.login(this.usuario).then(resposta => {
-                console.log(resposta.data)
                 if(resposta.status == 200){
-                    console.log("Logou")
-                    localStorage.setItem('token', resposta.data.token)
-                    localStorage.setItem('tipo_usuario', resposta.data.usuario.tipo_usuario)
+                    localStorage.setItem('token', resposta.data.accessToken)
+                    localStorage.setItem('usuario_id', resposta.data.user.id)
+                    localStorage.setItem('nome_usuario', resposta.data.user.nome)
 
-                    axios.defaults.headers.common['Authorization'] = 'Token '+resposta.data.token ;
-                    this.$router.push({name: 'dashboard'})
-
+                    this.$router.push({name: 'paginaInicial'})
                 }
             }).catch(
                 (error) =>{

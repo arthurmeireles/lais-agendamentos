@@ -1,31 +1,21 @@
 import {API} from './config'
 
 export default {
-    adicionarAgendamento: (agendamento) => {
-        return API.post('/agendamento', agendamento)
+    getAgendamentosUsuario: () => {
+        return API.get(`/agendamentos`)
     },
-    cancelarAgendamento:(usuarioId, agendamentoId )=>{
-        return API.delete(`associar-paciente/${usuarioId}/${agendamentoId}`)
-    },
-    deletarAgendamento: (agendamentoId) => {
-        return API.delete(`/agendamento/${agendamentoId}`)
-    },
-    getAgendamentos: () => {
-        return API.get('/agendamento')
-    },
-    getAgendamentosMarcados: () => {
-        return API.get('/agendamentoMarcados')
-    },
-    getAgendamentosDisponiveis: () => {
-        return API.get('/agendamentoDisponivel')
-    },
-    getAgendamentosPaciente: (usuarioId) => {
-        return API.get(`/agendamentoPaciente/${usuarioId}`)
+    getAgendamentosDisponiveis: (url) => {
+        return API.get(url)
     },
 
-
-
-    baixarRelatorio: () => {
-        window.location.href='http://localhost:8000/api/relatorio'
-    }
+    criarAgendamento: (agendamento) => {
+        return API.post('/agendamentos', agendamento)
+    },
+    removerAgendamento: (agendamento) => {
+        return API.patch(`/agendamentos/${agendamento.id}`, agendamento)
+    },
+    atualizarAgendamento: (agendamento) => {
+        return API.put(`/agendamentos/${agendamento.id}`, agendamento)
+    },
 }
+
